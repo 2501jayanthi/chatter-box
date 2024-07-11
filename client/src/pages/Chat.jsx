@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import {Container,Stack} from "react-bootstrap"
 import { ChatContext } from "../context/ChatContext";
 
 const Chat = () => {
@@ -7,7 +8,12 @@ const Chat = () => {
         userChatsError} = useContext(ChatContext)
 
 
-    return <>Chat</>;
+    return <Container>
+        {userChats?.length < 1 ? null : <Stack direction="horizontal">
+            <Stack>List</Stack>
+            <p>ChatBox</p>
+            </Stack>}
+    </Container>;
 }
  
 export default Chat ;
